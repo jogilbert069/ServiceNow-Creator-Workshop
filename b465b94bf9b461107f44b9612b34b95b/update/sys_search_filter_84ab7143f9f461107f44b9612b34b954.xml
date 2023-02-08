@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_search_filter">
+    <sys_search_filter action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <ais_search_source display_value="Requested Item">80ab7143f9f461107f44b9612b34b94f</ais_search_source>
+        <label>Requested Item</label>
+        <name>Requested Item</name>
+        <order>200</order>
+        <search_context_config display_value="Logistics AI Search Configuration">bd9bfd0308f46110cdca774bbe9b9742</search_context_config>
+        <sys_class_name>sys_search_filter</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-02-08 11:34:22</sys_created_on>
+        <sys_id>84ab7143f9f461107f44b9612b34b954</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Requested Item</sys_name>
+        <sys_package display_value="Logistics" source="x_snc_logistics">b465b94bf9b461107f44b9612b34b95b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Logistics">b465b94bf9b461107f44b9612b34b95b</sys_scope>
+        <sys_update_name>sys_search_filter_84ab7143f9f461107f44b9612b34b954</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-02-08 11:34:22</sys_updated_on>
+    </sys_search_filter>
+</record_update>

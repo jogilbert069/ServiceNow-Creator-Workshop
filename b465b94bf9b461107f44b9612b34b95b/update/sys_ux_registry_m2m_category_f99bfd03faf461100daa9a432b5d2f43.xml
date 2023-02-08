@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_registry_m2m_category">
+    <sys_ux_registry_m2m_category action="INSERT_OR_UPDATE">
+        <experience_category display_value="Workspace">afb4e3e173322010f0ca1e666bf6a726</experience_category>
+        <page_registry display_value="Logistics">3d9bfd0339f4611090f2a8d4411f5d41</page_registry>
+        <sys_class_name>sys_ux_registry_m2m_category</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-02-08 11:34:16</sys_created_on>
+        <sys_id>f99bfd03faf461100daa9a432b5d2f43</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Logistics" source="x_snc_logistics">b465b94bf9b461107f44b9612b34b95b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Logistics">b465b94bf9b461107f44b9612b34b95b</sys_scope>
+        <sys_update_name>sys_ux_registry_m2m_category_f99bfd03faf461100daa9a432b5d2f43</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-02-08 11:34:16</sys_updated_on>
+    </sys_ux_registry_m2m_category>
+</record_update>

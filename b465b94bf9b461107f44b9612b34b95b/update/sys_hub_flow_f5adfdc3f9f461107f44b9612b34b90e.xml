@@ -1,0 +1,760 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_hub_flow">
+    <sys_hub_flow action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <acls/>
+        <active>false</active>
+        <annotation/>
+        <callable_by_client_api>false</callable_by_client_api>
+        <category/>
+        <compiler_build/>
+        <copied_from>9a41b6c2ff12101088e94ee9453bf1a4</copied_from>
+        <copied_from_name>FlowTemplate_Empty</copied_from_name>
+        <description>An automated process to connect to our logistics carriers and update the status of pending shipments</description>
+        <internal_name>track_shipments</internal_name>
+        <label_cache>[{"name":"d46d9335-48f1-490d-a210-978fa19cb524.__dont_treat_as_error__","label":"8 - Update Record➛Don\u0027t Treat as Error","reference_display":"Don\u0027t Treat as Error","type":"boolean","base_type":"boolean","attributes":{"uiType":"boolean","visible_in_ui":"false","action_error_output":"true","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"d46d9335-48f1-490d-a210-978fa19cb524.__action_status__","label":"8 - Update Record➛Action Status","reference_display":"Action Status","type":"object","base_type":"object","attributes":{"uiType":"object","co_type_name":"FDACTIONSTATUS","action_error_output":"true","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"d46d9335-48f1-490d-a210-978fa19cb524.table_name","label":"8 - Update Record➛Shipments Table","reference":"x_snc_logistics_shipments","reference_display":"Shipments Table","type":"table_name","base_type":"table_name","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"d46d9335-48f1-490d-a210-978fa19cb524.record","label":"8 - Update Record➛Shipments Record","reference":"x_snc_logistics_shipments","reference_display":"Shipments Record","type":"reference","base_type":"reference","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"2a0b9690-78b4-45ae-842e-ae59593b7ddd.__dont_treat_as_error__","label":"7 - Track Shipment➛Don\u0027t Treat as Error","reference_display":"Don\u0027t Treat as Error","type":"boolean","base_type":"boolean","attributes":{"uiType":"boolean","visible_in_ui":"false","action_error_output":"true","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"2a0b9690-78b4-45ae-842e-ae59593b7ddd.__action_status__","label":"7 - Track Shipment➛Action Status","reference_display":"Action Status","type":"object","base_type":"object","attributes":{"uiType":"object","co_type_name":"FDACTIONSTATUS","action_error_output":"true","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"2a0b9690-78b4-45ae-842e-ae59593b7ddd.delivery_date","label":"7 - Track Shipment➛Expected Delivery Date","reference_display":"Expected Delivery Date","type":"glide_date","base_type":"glide_date","attributes":{"uiType":"glide_date","uiTypeLabel":"Date","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"5dccc5ef-9c55-42aa-9332-d9657e3a5a2a"}},{"name":"2a0b9690-78b4-45ae-842e-ae59593b7ddd.status","label":"7 - Track Shipment➛Current Status","reference_display":"Current Status","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"3af48448-4d97-4803-a5ae-857823588aa1"}},{"name":"73bec4a8-1efa-450c-9009-b3fd16655fc6.item.carrier","label":"2 - For Each➛Shipments Record➛Carrier","reference":"","reference_display":"Carrier","type":"choice","base_type":"choice","parent_table_name":"x_snc_logistics_shipments","column_name":"carrier","choices":[{"label":"-- None --","value":"","reference":false,"image":"","rawLabel":"-- None --","selected":false,"missing":false,"used":false},{"value":"fedex","parameters":{"name":"x_snc_logistics_shipments"},"reference":false,"image":"","rawLabel":"FedEx","selected":false,"label":"FedEx","missing":false,"used":false},{"value":"ups","parameters":{"name":"x_snc_logistics_shipments"},"reference":false,"image":"","rawLabel":"UPS","selected":false,"label":"UPS","missing":false,"used":false},{"value":"dhl","parameters":{"name":"x_snc_logistics_shipments"},"reference":false,"image":"","rawLabel":"DHL","selected":false,"label":"DHL","missing":false,"used":false}]},{"name":"73bec4a8-1efa-450c-9009-b3fd16655fc6.item","label":"2 - For Each➛Shipments Record","reference":"x_snc_logistics_shipments","reference_display":"Shipments","type":"reference","base_type":"reference","attributes":{"pills_draggable_inside_block":"true","pills_draggable_outside_block":"false"}},{"name":"416dd367-0b35-47db-8ea6-14c61cff84d0.__dont_treat_as_error__","label":"1 - Look Up Records➛Don\u0027t Treat as Error","reference_display":"Don\u0027t Treat as Error","type":"boolean","base_type":"boolean","attributes":{"uiType":"boolean","visible_in_ui":"false","action_error_output":"true","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"416dd367-0b35-47db-8ea6-14c61cff84d0.__action_status__","label":"1 - Look Up Records➛Action Status","reference_display":"Action Status","type":"object","base_type":"object","attributes":{"uiType":"object","co_type_name":"FDACTIONSTATUS","action_error_output":"true","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"416dd367-0b35-47db-8ea6-14c61cff84d0.Count","label":"1 - Look Up Records➛Count","reference_display":"Count","type":"integer","base_type":"integer","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"416dd367-0b35-47db-8ea6-14c61cff84d0.Table","label":"1 - Look Up Records➛Shipments Table","reference":"x_snc_logistics_shipments","reference_display":"Shipments Table","type":"table_name","base_type":"table_name","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"416dd367-0b35-47db-8ea6-14c61cff84d0.Records","label":"1 - Look Up Records➛Shipments Records","reference":"x_snc_logistics_shipments","reference_display":"Shipments Records","type":"records","base_type":"records","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"82a8253a-b15b-4be3-ae3d-0d036afb01e8.status","label":"4 - Track Shipment➛Current Status","reference_display":"Current Status","type":"string","base_type":"string","attributes":{"uiType":"string","uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiUniqueId":"3af48448-4d97-4803-a5ae-857823588aa1"}},{"name":"82a8253a-b15b-4be3-ae3d-0d036afb01e8.delivery_date","label":"4 - Track Shipment➛Expected Delivery Date","reference_display":"Expected Delivery Date","type":"glide_date","base_type":"glide_date","attributes":{"uiType":"glide_date","uiTypeLabel":"Date","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiUniqueId":"5dccc5ef-9c55-42aa-9332-d9657e3a5a2a"}},{"name":"82a8253a-b15b-4be3-ae3d-0d036afb01e8.__action_status__","label":"4 - Track Shipment➛Action Status","reference_display":"Action Status","type":"object","base_type":"object","attributes":{"uiType":"object","co_type_name":"FDACTIONSTATUS","action_error_output":"true","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"82a8253a-b15b-4be3-ae3d-0d036afb01e8.__dont_treat_as_error__","label":"4 - Track Shipment➛Don\u0027t Treat as Error","reference_display":"Don\u0027t Treat as Error","type":"boolean","base_type":"boolean","attributes":{"uiType":"boolean","visible_in_ui":"false","action_error_output":"true","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"73bec4a8-1efa-450c-9009-b3fd16655fc6.item.tracking_number","label":"2 - For Each➛Shipments Record➛Tracking Number","reference":"","reference_display":"Tracking Number","type":"string","base_type":"string","parent_table_name":"x_snc_logistics_shipments","column_name":"tracking_number"},{"name":"d2cb5d06-c9fe-456a-b0c1-6ef705131c8f.record","label":"5 - Update Record➛Shipments Record","reference":"x_snc_logistics_shipments","reference_display":"Shipments Record","type":"reference","base_type":"reference","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"d2cb5d06-c9fe-456a-b0c1-6ef705131c8f.table_name","label":"5 - Update Record➛Shipments Table","reference":"x_snc_logistics_shipments","reference_display":"Shipments Table","type":"table_name","base_type":"table_name","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"d2cb5d06-c9fe-456a-b0c1-6ef705131c8f.__action_status__","label":"5 - Update Record➛Action Status","reference_display":"Action Status","type":"object","base_type":"object","attributes":{"uiType":"object","co_type_name":"FDACTIONSTATUS","action_error_output":"true","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"d2cb5d06-c9fe-456a-b0c1-6ef705131c8f.__dont_treat_as_error__","label":"5 - Update Record➛Don\u0027t Treat as Error","reference_display":"Don\u0027t Treat as Error","type":"boolean","base_type":"boolean","attributes":{"uiType":"boolean","visible_in_ui":"false","action_error_output":"true","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"07444767-6622-4f02-ac32-e257e0a2d077.status","label":"10 - Track Shipment➛Current Status","type":"string","base_type":"string","attributes":{"uiTypeLabel":"String","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","pwd2droppable":"true","uiType":"string","uiUniqueId":"3af48448-4d97-4803-a5ae-857823588aa1"}},{"name":"07444767-6622-4f02-ac32-e257e0a2d077.delivery_date","label":"10 - Track Shipment➛Expected Delivery Date","type":"glide_date","base_type":"glide_date","attributes":{"uiTypeLabel":"Date","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"glide_date","uiUniqueId":"5dccc5ef-9c55-42aa-9332-d9657e3a5a2a"}},{"name":"07444767-6622-4f02-ac32-e257e0a2d077.__action_status__","label":"10 - Track Shipment➛Action Status","reference_display":"Action Status","type":"object","base_type":"object","attributes":{"co_type_name":"FDACTIONSTATUS","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"object","action_error_output":"true"}},{"name":"07444767-6622-4f02-ac32-e257e0a2d077.__dont_treat_as_error__","label":"10 - Track Shipment➛Don\u0027t Treat as Error","reference_display":"Don\u0027t Treat as Error","type":"boolean","base_type":"boolean","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"boolean","visible_in_ui":"false","action_error_output":"true"}},{"name":"b889bc3e-d90d-4222-bcc1-6c0323f89362.record","label":"11 - Update Record➛Record","reference_display":"Record","type":"document_id","base_type":"document_id","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"b889bc3e-d90d-4222-bcc1-6c0323f89362.table_name","label":"11 - Update Record➛Table","reference_display":"Table","type":"table_name","base_type":"table_name","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper"}},{"name":"b889bc3e-d90d-4222-bcc1-6c0323f89362.__action_status__","label":"11 - Update Record➛Action Status","reference_display":"Action Status","type":"object","base_type":"object","attributes":{"co_type_name":"FDACTIONSTATUS","element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"object","action_error_output":"true"}},{"name":"b889bc3e-d90d-4222-bcc1-6c0323f89362.__dont_treat_as_error__","label":"11 - Update Record➛Don\u0027t Treat as Error","reference_display":"Don\u0027t Treat as Error","type":"boolean","base_type":"boolean","attributes":{"element_mapping_provider":"com.glide.flow_design.action.data.FlowDesignVariableMapper","uiType":"boolean","visible_in_ui":"false","action_error_output":"true"}}]</label_cache>
+        <latest_snapshot/>
+        <master_snapshot/>
+        <name>Track Shipments</name>
+        <natlang/>
+        <outputs/>
+        <pre_compiled>false</pre_compiled>
+        <remote_trigger_id/>
+        <run_as>user</run_as>
+        <run_with_roles/>
+        <sc_callable>false</sc_callable>
+        <show_draft_actions>false</show_draft_actions>
+        <show_triggered_flows>false</show_triggered_flows>
+        <status>draft</status>
+        <sys_class_name>sys_hub_flow</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-02-08 11:43:14</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>f5adfdc3f9f461107f44b9612b34b90e</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>Track Shipments</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Logistics" source="x_snc_logistics">b465b94bf9b461107f44b9612b34b95b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Logistics">b465b94bf9b461107f44b9612b34b95b</sys_scope>
+        <sys_update_name>sys_hub_flow_f5adfdc3f9f461107f44b9612b34b90e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-02-08 11:58:12</sys_updated_on>
+        <type>flow</type>
+    </sys_hub_flow>
+    <sys_translated_text action="delete_multiple" query="documentkey=f5adfdc3f9f461107f44b9612b34b90e"/>
+    <sys_variable_value action="delete_multiple" query="document_key=f5adfdc3f9f461107f44b9612b34b90e"/>
+    <sys_hub_trigger_instance action="delete_multiple" query="flow=f5adfdc3f9f461107f44b9612b34b90e^sys_idNOT IN214f7d47f9f461107f44b9612b34b9d3"/>
+    <sys_hub_trigger_instance action="INSERT_OR_UPDATE">
+        <comment/>
+        <display_text/>
+        <flow display_value="Track Shipments">f5adfdc3f9f461107f44b9612b34b90e</flow>
+        <name>Repeat</name>
+        <remote_sys_id/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-02-08 11:50:18</sys_created_on>
+        <sys_id>214f7d47f9f461107f44b9612b34b9d3</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-02-08 11:58:12</sys_updated_on>
+        <trigger_definition display_value="Repeat">f63f0d94c32222002841b63b12d3aeed</trigger_definition>
+        <trigger_inputs/>
+        <trigger_outputs/>
+        <trigger_type>repeat</trigger_type>
+    </sys_hub_trigger_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=214f7d47f9f461107f44b9612b34b9d3"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_trigger_instance</document>
+        <document_key>214f7d47f9f461107f44b9612b34b9d3</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-02-08 11:50:18</sys_created_on>
+        <sys_id>a94f7d47f9f461107f44b9612b34b9d4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-02-08 11:50:18</sys_updated_on>
+        <value>1970-01-01 03:00:01</value>
+        <variable display_value="Repeat">1c5f4d94c32222002841b63b12d3aeb3</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_trigger_input_f63f0d94c32222002841b63b12d3aeed^id=214f7d47f9f461107f44b9612b34b9d3"/>
+    <sys_hub_flow_stage action="delete_multiple" query="flow=f5adfdc3f9f461107f44b9612b34b90e"/>
+    <sys_flow_cat_variable_model action="delete_multiple" query="id=f5adfdc3f9f461107f44b9612b34b90e^sys_idNOT INb9adfdc3f9f461107f44b9612b34b910"/>
+    <sys_flow_cat_variable_model action="INSERT_OR_UPDATE">
+        <id>f5adfdc3f9f461107f44b9612b34b90e</id>
+        <name>Track Shipments</name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-02-08 11:43:14</sys_created_on>
+        <sys_id>b9adfdc3f9f461107f44b9612b34b910</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_scope/>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-02-08 11:43:14</sys_updated_on>
+    </sys_flow_cat_variable_model>
+    <sys_flow_cat_variable action="delete_multiple" query="flow_catalog_model=b9adfdc3f9f461107f44b9612b34b910"/>
+    <sys_hub_flow_input action="delete_multiple" query="model=f5adfdc3f9f461107f44b9612b34b90e"/>
+    <sys_hub_flow_output action="delete_multiple" query="model=f5adfdc3f9f461107f44b9612b34b90e"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=f5adfdc3f9f461107f44b9612b34b90e"/>
+    <sys_hub_action_instance action="delete_multiple" query="flow=f5adfdc3f9f461107f44b9612b34b90e^sys_idNOT IN294f7d47f9f461107f44b9612b34b9db,2b7046c7f9f461107f44b9612b34b95c,4511020bf9f461107f44b9612b34b9e3,4511020bf9f461107f44b9612b34b9e8,7aef7987f9f461107f44b9612b34b9ac,7aef7987f9f461107f44b9612b34b9b1,e37046c7f9f461107f44b9612b34b96e"/>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_type display_value="Look Up Records">43400a1587003300663ca1bb36cb0b4b</action_type>
+        <action_type_parent/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Track Shipments">f5adfdc3f9f461107f44b9612b34b90e</flow>
+        <order>1</order>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-02-08 11:50:18</sys_created_on>
+        <sys_id>294f7d47f9f461107f44b9612b34b9db</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_scope display_value="Logistics">b465b94bf9b461107f44b9612b34b95b</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-02-08 11:58:12</sys_updated_on>
+        <ui_id>416dd367-0b35-47db-8ea6-14c61cff84d0</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=294f7d47f9f461107f44b9612b34b9db"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>294f7d47f9f461107f44b9612b34b9db</document_key>
+        <order>0</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-02-08 11:50:19</sys_created_on>
+        <sys_id>a54f7d47f9f461107f44b9612b34b9de</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-02-08 11:50:19</sys_updated_on>
+        <value>x_snc_logistics_shipments</value>
+        <variable display_value="Table">8f400a1587003300663ca1bb36cb0b4b</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>294f7d47f9f461107f44b9612b34b9db</document_key>
+        <order>1</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-02-08 11:50:19</sys_created_on>
+        <sys_id>e14f7d47f9f461107f44b9612b34b9de</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-02-08 11:50:19</sys_updated_on>
+        <value>statusINin_transit,new</value>
+        <variable display_value="Conditions">8f400a1587003300663ca1bb36cb0b50</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="table=var__m_sys_hub_action_input_43400a1587003300663ca1bb36cb0b4b^id=294f7d47f9f461107f44b9612b34b9db"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=294f7d47f9f461107f44b9612b34b9db"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=294f7d47f9f461107f44b9612b34b9db"/>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Track Shipment">e1ceb56d07a720102b8affa08c1ed030</action_type>
+        <action_type_parent/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Track Shipments">f5adfdc3f9f461107f44b9612b34b90e</flow>
+        <order>7</order>
+        <parent_ui_id>03f92af5-517d-454b-9a4c-31f5e9063327</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-02-08 11:55:38</sys_created_on>
+        <sys_id>2b7046c7f9f461107f44b9612b34b95c</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope display_value="Logistics">b465b94bf9b461107f44b9612b34b95b</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-02-08 11:58:12</sys_updated_on>
+        <ui_id>2a0b9690-78b4-45ae-842e-ae59593b7ddd</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=2b7046c7f9f461107f44b9612b34b95c"/>
+    <sys_element_mapping action="delete_multiple" query="id=2b7046c7f9f461107f44b9612b34b95c"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>tracking_number</field>
+        <id>2b7046c7f9f461107f44b9612b34b95c</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-02-08 11:55:38</sys_created_on>
+        <sys_id>ef7046c7f9f461107f44b9612b34b95d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-02-08 11:55:38</sys_updated_on>
+        <table>var__m_sys_hub_action_input_e1ceb56d07a720102b8affa08c1ed030</table>
+        <value>{{73bec4a8-1efa-450c-9009-b3fd16655fc6.item.tracking_number}}</value>
+    </sys_element_mapping>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=2b7046c7f9f461107f44b9612b34b95c"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=2b7046c7f9f461107f44b9612b34b95c"/>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Track Shipment">96300ead07a720102b8affa08c1ed03e</action_type>
+        <action_type_parent/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Track Shipments">f5adfdc3f9f461107f44b9612b34b90e</flow>
+        <order>10</order>
+        <parent_ui_id>10061dc9-b4e0-44df-8222-afe7bc099b64</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-02-08 11:58:12</sys_created_on>
+        <sys_id>4511020bf9f461107f44b9612b34b9e3</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Logistics">b465b94bf9b461107f44b9612b34b95b</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-02-08 11:58:12</sys_updated_on>
+        <ui_id>07444767-6622-4f02-ac32-e257e0a2d077</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=4511020bf9f461107f44b9612b34b9e3"/>
+    <sys_element_mapping action="delete_multiple" query="id=4511020bf9f461107f44b9612b34b9e3"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>tracking_number</field>
+        <id>4511020bf9f461107f44b9612b34b9e3</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-02-08 11:58:12</sys_created_on>
+        <sys_id>0911020bf9f461107f44b9612b34b9e4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-02-08 11:58:12</sys_updated_on>
+        <table>var__m_sys_hub_action_input_96300ead07a720102b8affa08c1ed03e</table>
+        <value>{{73bec4a8-1efa-450c-9009-b3fd16655fc6.item.tracking_number}}</value>
+    </sys_element_mapping>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=4511020bf9f461107f44b9612b34b9e3"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=4511020bf9f461107f44b9612b34b9e3"/>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Track Shipments">f5adfdc3f9f461107f44b9612b34b90e</flow>
+        <order>11</order>
+        <parent_ui_id>10061dc9-b4e0-44df-8222-afe7bc099b64</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-02-08 11:58:12</sys_created_on>
+        <sys_id>4511020bf9f461107f44b9612b34b9e8</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Logistics">b465b94bf9b461107f44b9612b34b95b</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-02-08 11:58:12</sys_updated_on>
+        <ui_id>b889bc3e-d90d-4222-bcc1-6c0323f89362</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=4511020bf9f461107f44b9612b34b9e8"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>4511020bf9f461107f44b9612b34b9e8</document_key>
+        <order>50</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-02-08 11:58:12</sys_created_on>
+        <sys_id>8d11020bf9f461107f44b9612b34b9e9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-02-08 11:58:12</sys_updated_on>
+        <value>x_snc_logistics_shipments</value>
+        <variable display_value="Table">b5d01916c31332002841b63b12d3aec9</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=4511020bf9f461107f44b9612b34b9e8"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>record</field>
+        <id>4511020bf9f461107f44b9612b34b9e8</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-02-08 11:58:12</sys_created_on>
+        <sys_id>0d11020bf9f461107f44b9612b34b9e9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-02-08 11:58:12</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value>{{73bec4a8-1efa-450c-9009-b3fd16655fc6.item}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table_name</field>
+        <id>4511020bf9f461107f44b9612b34b9e8</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-02-08 11:58:12</sys_created_on>
+        <sys_id>8511020bf9f461107f44b9612b34b9e9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-02-08 11:58:12</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>values</field>
+        <id>4511020bf9f461107f44b9612b34b9e8</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-02-08 11:58:12</sys_created_on>
+        <sys_id>4911020bf9f461107f44b9612b34b9e9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-02-08 11:58:12</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value>status={{07444767-6622-4f02-ac32-e257e0a2d077.status}}^deliver_date={{07444767-6622-4f02-ac32-e257e0a2d077.delivery_date}}</value>
+    </sys_element_mapping>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=4511020bf9f461107f44b9612b34b9e8"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=4511020bf9f461107f44b9612b34b9e8"/>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Track Shipment">f13d7de907a720102b8affa08c1ed028</action_type>
+        <action_type_parent/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Track Shipments">f5adfdc3f9f461107f44b9612b34b90e</flow>
+        <order>4</order>
+        <parent_ui_id>ccb92ae1-0566-47f1-b81e-16b261249e87</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-02-08 11:53:08</sys_created_on>
+        <sys_id>7aef7987f9f461107f44b9612b34b9ac</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope display_value="Logistics">b465b94bf9b461107f44b9612b34b95b</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-02-08 11:58:12</sys_updated_on>
+        <ui_id>82a8253a-b15b-4be3-ae3d-0d036afb01e8</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=7aef7987f9f461107f44b9612b34b9ac"/>
+    <sys_element_mapping action="delete_multiple" query="id=7aef7987f9f461107f44b9612b34b9ac"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>tracking_number</field>
+        <id>7aef7987f9f461107f44b9612b34b9ac</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-02-08 11:53:08</sys_created_on>
+        <sys_id>3eef7987f9f461107f44b9612b34b9ad</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-02-08 11:53:08</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f13d7de907a720102b8affa08c1ed028</table>
+        <value>{{73bec4a8-1efa-450c-9009-b3fd16655fc6.item.tracking_number}}</value>
+    </sys_element_mapping>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=7aef7987f9f461107f44b9612b34b9ac"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=7aef7987f9f461107f44b9612b34b9ac"/>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Track Shipments">f5adfdc3f9f461107f44b9612b34b90e</flow>
+        <order>5</order>
+        <parent_ui_id>ccb92ae1-0566-47f1-b81e-16b261249e87</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-02-08 11:53:08</sys_created_on>
+        <sys_id>7aef7987f9f461107f44b9612b34b9b1</sys_id>
+        <sys_mod_count>6</sys_mod_count>
+        <sys_scope display_value="Logistics">b465b94bf9b461107f44b9612b34b95b</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-02-08 11:58:12</sys_updated_on>
+        <ui_id>d2cb5d06-c9fe-456a-b0c1-6ef705131c8f</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=7aef7987f9f461107f44b9612b34b9b1"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>7aef7987f9f461107f44b9612b34b9b1</document_key>
+        <order>50</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-02-08 11:53:08</sys_created_on>
+        <sys_id>3aef7987f9f461107f44b9612b34b9b3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-02-08 11:53:08</sys_updated_on>
+        <value>x_snc_logistics_shipments</value>
+        <variable display_value="Table">b5d01916c31332002841b63b12d3aec9</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=7aef7987f9f461107f44b9612b34b9b1"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>record</field>
+        <id>7aef7987f9f461107f44b9612b34b9b1</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-02-08 11:53:08</sys_created_on>
+        <sys_id>b6ef7987f9f461107f44b9612b34b9b3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-02-08 11:53:08</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value>{{73bec4a8-1efa-450c-9009-b3fd16655fc6.item}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table_name</field>
+        <id>7aef7987f9f461107f44b9612b34b9b1</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-02-08 11:53:08</sys_created_on>
+        <sys_id>32ef7987f9f461107f44b9612b34b9b3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-02-08 11:53:08</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>values</field>
+        <id>7aef7987f9f461107f44b9612b34b9b1</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-02-08 11:53:08</sys_created_on>
+        <sys_id>f2ef7987f9f461107f44b9612b34b9b3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-02-08 11:53:08</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value>status={{82a8253a-b15b-4be3-ae3d-0d036afb01e8.status}}^deliver_date={{82a8253a-b15b-4be3-ae3d-0d036afb01e8.delivery_date}}</value>
+    </sys_element_mapping>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=7aef7987f9f461107f44b9612b34b9b1"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=7aef7987f9f461107f44b9612b34b9b1"/>
+    <sys_hub_action_instance action="INSERT_OR_UPDATE">
+        <action_inputs/>
+        <action_inputs/>
+        <action_type display_value="Update Record">f9d01dd2c31332002841b63b12d3aea1</action_type>
+        <action_type_parent/>
+        <comment/>
+        <compiled_snapshot/>
+        <display_text/>
+        <flow display_value="Track Shipments">f5adfdc3f9f461107f44b9612b34b90e</flow>
+        <order>8</order>
+        <parent_ui_id>03f92af5-517d-454b-9a4c-31f5e9063327</parent_ui_id>
+        <sys_class_name>sys_hub_action_instance</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-02-08 11:55:38</sys_created_on>
+        <sys_id>e37046c7f9f461107f44b9612b34b96e</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope display_value="Logistics">b465b94bf9b461107f44b9612b34b95b</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-02-08 11:58:12</sys_updated_on>
+        <ui_id>d46d9335-48f1-490d-a210-978fa19cb524</ui_id>
+    </sys_hub_action_instance>
+    <sys_variable_value action="delete_multiple" query="document_key=e37046c7f9f461107f44b9612b34b96e"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_action_instance</document>
+        <document_key>e37046c7f9f461107f44b9612b34b96e</document_key>
+        <order>50</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-02-08 11:55:38</sys_created_on>
+        <sys_id>637046c7f9f461107f44b9612b34b970</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-02-08 11:55:38</sys_updated_on>
+        <value>x_snc_logistics_shipments</value>
+        <variable display_value="Table">b5d01916c31332002841b63b12d3aec9</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=e37046c7f9f461107f44b9612b34b96e"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>record</field>
+        <id>e37046c7f9f461107f44b9612b34b96e</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-02-08 11:55:38</sys_created_on>
+        <sys_id>ef7046c7f9f461107f44b9612b34b96f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-02-08 11:55:38</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value>{{73bec4a8-1efa-450c-9009-b3fd16655fc6.item}}</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>table_name</field>
+        <id>e37046c7f9f461107f44b9612b34b96e</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-02-08 11:55:38</sys_created_on>
+        <sys_id>6b7046c7f9f461107f44b9612b34b96f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-02-08 11:55:38</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>values</field>
+        <id>e37046c7f9f461107f44b9612b34b96e</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-02-08 11:55:38</sys_created_on>
+        <sys_id>2f7046c7f9f461107f44b9612b34b96f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-02-08 11:55:38</sys_updated_on>
+        <table>var__m_sys_hub_action_input_f9d01dd2c31332002841b63b12d3aea1</table>
+        <value>status={{2a0b9690-78b4-45ae-842e-ae59593b7ddd.status}}^deliver_date={{2a0b9690-78b4-45ae-842e-ae59593b7ddd.delivery_date}}</value>
+    </sys_element_mapping>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=e37046c7f9f461107f44b9612b34b96e"/>
+    <sys_hub_alias_mapping action="delete_multiple" query="source_id=e37046c7f9f461107f44b9612b34b96e"/>
+    <sys_hub_sub_flow_instance action="delete_multiple" query="flow=f5adfdc3f9f461107f44b9612b34b90e"/>
+    <sys_hub_flow_logic action="delete_multiple" query="flow=f5adfdc3f9f461107f44b9612b34b90e^sys_idNOT IN4111020bf9f461107f44b9612b34b9db,654f7d47f9f461107f44b9612b34b9e0,a37046c7f9f461107f44b9612b34b953,e94f7d47f9f461107f44b9612b34b9e4"/>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <block display_value="">8911020bf9f461107f44b9612b34b9da</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Track Shipments">f5adfdc3f9f461107f44b9612b34b90e</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <inputs/>
+        <inputs/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>9</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id>73bec4a8-1efa-450c-9009-b3fd16655fc6</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-02-08 11:58:12</sys_created_on>
+        <sys_id>4111020bf9f461107f44b9612b34b9db</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_scope display_value="Logistics">b465b94bf9b461107f44b9612b34b95b</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-02-08 11:58:12</sys_updated_on>
+        <ui_id>10061dc9-b4e0-44df-8222-afe7bc099b64</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=4111020bf9f461107f44b9612b34b9db"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_flow_logic</document>
+        <document_key>4111020bf9f461107f44b9612b34b9db</document_key>
+        <order>10</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-02-08 11:58:12</sys_created_on>
+        <sys_id>c111020bf9f461107f44b9612b34b9de</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-02-08 11:58:12</sys_updated_on>
+        <value>DHL</value>
+        <variable display_value="Condition Label">f0af19c1c32632002841b63b12d3aea3</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=4111020bf9f461107f44b9612b34b9db"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition</field>
+        <id>4111020bf9f461107f44b9612b34b9db</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-02-08 11:58:12</sys_created_on>
+        <sys_id>4111020bf9f461107f44b9612b34b9de</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-02-08 11:58:12</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e</table>
+        <value>{{73bec4a8-1efa-450c-9009-b3fd16655fc6.item.carrier}}=dhl</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition_name</field>
+        <id>4111020bf9f461107f44b9612b34b9db</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-02-08 11:58:12</sys_created_on>
+        <sys_id>8d11020bf9f461107f44b9612b34b9dd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-02-08 11:58:12</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_flow_logic_ext_input action="delete_multiple" query="model=4111020bf9f461107f44b9612b34b9db"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=4111020bf9f461107f44b9612b34b9db"/>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <block display_value="">654f7d47f9f461107f44b9612b34b9df</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Track Shipments">f5adfdc3f9f461107f44b9612b34b90e</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <inputs/>
+        <inputs/>
+        <logic_definition display_value="For Each">098e1dc5c3e232002841b63b12d3ae33</logic_definition>
+        <order>2</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id/>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-02-08 11:50:19</sys_created_on>
+        <sys_id>654f7d47f9f461107f44b9612b34b9e0</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope display_value="Logistics">b465b94bf9b461107f44b9612b34b95b</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-02-08 11:58:12</sys_updated_on>
+        <ui_id>73bec4a8-1efa-450c-9009-b3fd16655fc6</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=654f7d47f9f461107f44b9612b34b9e0"/>
+    <sys_element_mapping action="delete_multiple" query="id=654f7d47f9f461107f44b9612b34b9e0"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>items</field>
+        <id>654f7d47f9f461107f44b9612b34b9e0</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-02-08 11:50:19</sys_created_on>
+        <sys_id>6d4f7d47f9f461107f44b9612b34b9e3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-02-08 11:50:19</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_098e1dc5c3e232002841b63b12d3ae33</table>
+        <value>{{416dd367-0b35-47db-8ea6-14c61cff84d0.Records}}</value>
+    </sys_element_mapping>
+    <sys_hub_flow_logic_ext_input action="delete_multiple" query="model=654f7d47f9f461107f44b9612b34b9e0"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=654f7d47f9f461107f44b9612b34b9e0"/>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <block display_value="">e77046c7f9f461107f44b9612b34b952</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Track Shipments">f5adfdc3f9f461107f44b9612b34b90e</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <inputs/>
+        <inputs/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>6</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id>73bec4a8-1efa-450c-9009-b3fd16655fc6</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-02-08 11:55:38</sys_created_on>
+        <sys_id>a37046c7f9f461107f44b9612b34b953</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_scope display_value="Logistics">b465b94bf9b461107f44b9612b34b95b</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-02-08 11:58:12</sys_updated_on>
+        <ui_id>03f92af5-517d-454b-9a4c-31f5e9063327</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=a37046c7f9f461107f44b9612b34b953"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_flow_logic</document>
+        <document_key>a37046c7f9f461107f44b9612b34b953</document_key>
+        <order>10</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-02-08 11:55:38</sys_created_on>
+        <sys_id>af7046c7f9f461107f44b9612b34b956</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-02-08 11:55:38</sys_updated_on>
+        <value>UPS</value>
+        <variable display_value="Condition Label">f0af19c1c32632002841b63b12d3aea3</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=a37046c7f9f461107f44b9612b34b953"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition</field>
+        <id>a37046c7f9f461107f44b9612b34b953</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-02-08 11:55:38</sys_created_on>
+        <sys_id>2f7046c7f9f461107f44b9612b34b956</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-02-08 11:55:38</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e</table>
+        <value>{{73bec4a8-1efa-450c-9009-b3fd16655fc6.item.carrier}}=ups</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition_name</field>
+        <id>a37046c7f9f461107f44b9612b34b953</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-02-08 11:55:38</sys_created_on>
+        <sys_id>277046c7f9f461107f44b9612b34b956</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-02-08 11:55:38</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_flow_logic_ext_input action="delete_multiple" query="model=a37046c7f9f461107f44b9612b34b953"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=a37046c7f9f461107f44b9612b34b953"/>
+    <sys_hub_flow_logic action="INSERT_OR_UPDATE">
+        <block display_value="">254f7d47f9f461107f44b9612b34b9e4</block>
+        <comment/>
+        <connected_to/>
+        <decision_table/>
+        <decision_table_inputs/>
+        <display_text/>
+        <extended_inputs/>
+        <flow display_value="Track Shipments">f5adfdc3f9f461107f44b9612b34b90e</flow>
+        <flow_variable/>
+        <flow_variables_assigned/>
+        <inputs/>
+        <inputs/>
+        <logic_definition display_value="If">af4e1945c3e232002841b63b12d3ae3e</logic_definition>
+        <order>3</order>
+        <outputs_assigned/>
+        <outputs_to_assign/>
+        <parent_ui_id>73bec4a8-1efa-450c-9009-b3fd16655fc6</parent_ui_id>
+        <sys_class_name>sys_hub_flow_logic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-02-08 11:50:19</sys_created_on>
+        <sys_id>e94f7d47f9f461107f44b9612b34b9e4</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_scope display_value="Logistics">b465b94bf9b461107f44b9612b34b95b</sys_scope>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-02-08 11:58:12</sys_updated_on>
+        <ui_id>ccb92ae1-0566-47f1-b81e-16b261249e87</ui_id>
+        <workflow_inputs/>
+        <workflow_reference/>
+    </sys_hub_flow_logic>
+    <sys_variable_value action="delete_multiple" query="document_key=e94f7d47f9f461107f44b9612b34b9e4"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_hub_flow_logic</document>
+        <document_key>e94f7d47f9f461107f44b9612b34b9e4</document_key>
+        <order>10</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-02-08 11:50:19</sys_created_on>
+        <sys_id>e14f7d47f9f461107f44b9612b34b9e8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-02-08 11:50:19</sys_updated_on>
+        <value>Fed Ex</value>
+        <variable display_value="Condition Label">f0af19c1c32632002841b63b12d3aea3</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=e94f7d47f9f461107f44b9612b34b9e4"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition</field>
+        <id>e94f7d47f9f461107f44b9612b34b9e4</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-02-08 11:50:19</sys_created_on>
+        <sys_id>614f7d47f9f461107f44b9612b34b9e8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-02-08 11:50:19</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e</table>
+        <value>{{73bec4a8-1efa-450c-9009-b3fd16655fc6.item.carrier}}=fedex</value>
+    </sys_element_mapping>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>condition_name</field>
+        <id>e94f7d47f9f461107f44b9612b34b9e4</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-02-08 11:50:19</sys_created_on>
+        <sys_id>ad4f7d47f9f461107f44b9612b34b9e7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-02-08 11:50:19</sys_updated_on>
+        <table>var__m_sys_hub_flow_logic_input_af4e1945c3e232002841b63b12d3ae3e</table>
+        <value/>
+    </sys_element_mapping>
+    <sys_hub_flow_logic_ext_input action="delete_multiple" query="model=e94f7d47f9f461107f44b9612b34b9e4"/>
+    <sys_hub_input_scripts action="delete_multiple" query="instance=e94f7d47f9f461107f44b9612b34b9e4"/>
+    <sys_hub_pill_compound action="delete_multiple" query="attached_to=f5adfdc3f9f461107f44b9612b34b90e"/>
+    <sys_hub_flow_variable action="delete_multiple" query="model=f5adfdc3f9f461107f44b9612b34b90e"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_input_f5adfdc3f9f461107f44b9612b34b90e"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_input_f5adfdc3f9f461107f44b9612b34b90e"/>
+    <sys_documentation action="delete_multiple" query="name=var__m_sys_hub_flow_output_f5adfdc3f9f461107f44b9612b34b90e"/>
+    <sys_choice action="delete_multiple" query="name=var__m_sys_hub_flow_output_f5adfdc3f9f461107f44b9612b34b90e"/>
+    <sys_flow_trigger_plan action="delete_multiple" query="plan_id=f5adfdc3f9f461107f44b9612b34b90e"/>
+    <sys_flow_subflow_plan action="delete_multiple" query="plan_id=f5adfdc3f9f461107f44b9612b34b90e"/>
+</record_update>

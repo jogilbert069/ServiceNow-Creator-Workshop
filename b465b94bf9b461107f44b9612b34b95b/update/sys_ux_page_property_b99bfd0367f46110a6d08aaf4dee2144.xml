@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ux_page_property">
+    <sys_ux_page_property action="INSERT_OR_UPDATE">
+        <choices/>
+        <description/>
+        <name>globalSearchDataConfigId</name>
+        <page display_value="Logistics">3d9bfd0339f4611090f2a8d4411f5d41</page>
+        <required_translations>[]</required_translations>
+        <route/>
+        <suffix/>
+        <sys_class_name>sys_ux_page_property</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-02-08 11:34:16</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>global</sys_domain_path>
+        <sys_id>b99bfd0367f46110a6d08aaf4dee2144</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>globalSearchDataConfigId</sys_name>
+        <sys_package display_value="Logistics" source="x_snc_logistics">b465b94bf9b461107f44b9612b34b95b</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Logistics">b465b94bf9b461107f44b9612b34b95b</sys_scope>
+        <sys_update_name>sys_ux_page_property_b99bfd0367f46110a6d08aaf4dee2144</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-02-08 11:34:16</sys_updated_on>
+        <type>string</type>
+        <unique_name>x_snc_logistics.3d9bfd0339f4611090f2a8d4411f5d41.root.globalSearchDataConfigId</unique_name>
+        <value>399bfd0326f46110d33e2d0d3cc40546</value>
+    </sys_ux_page_property>
+    <sys_translated_text action="delete_multiple" query="documentkey=b99bfd0367f46110a6d08aaf4dee2144"/>
+</record_update>
